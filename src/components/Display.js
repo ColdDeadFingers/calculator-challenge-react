@@ -1,22 +1,13 @@
 import React from "react";
 import { useState } from "react";
 
-export default function Display(){
-
-    const [calc, setCalc] = useState("");
-    const [result, setResult] = useState("");
-
-    const operators = ["/", "x", "+", "-", "."];
-
-    const updateDisplay = value => {
-        setCalc(calc + value);
-    }
+export default function Display(props){
 
     return(
         <div className="calculator--display">
             <div className="calculator--screen">
-                <p className="values">{calc || "0"}</p>
-                <p className="result">{result ? "0" : ""}</p>
+                <p className="values">{props.value}</p>
+                <p className="result">{props.result}</p>
             </div>
 
          </div>
